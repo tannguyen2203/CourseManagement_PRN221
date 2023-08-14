@@ -3,15 +3,17 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Repository.Models
+namespace CrouseManagement.Repository.Models
 {
-    public partial class TblAttendence
+    public partial class Attendence
     {
         public int Id { get; set; }
         public int? SessionId { get; set; }
         public DateTime? DateAttendence { get; set; }
         public int? Status { get; set; }
+        public int? StudentId { get; set; }
 
-        public virtual TblSession Session { get; set; }
+        public virtual Session Session { get; set; }
+        public virtual Student Student { get; set; }
     }
 }

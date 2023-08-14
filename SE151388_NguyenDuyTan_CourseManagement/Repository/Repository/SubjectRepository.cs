@@ -1,4 +1,4 @@
-﻿using Repository.Models;
+﻿using CrouseManagement.Repository.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-    public class SubjectRepository : RepositoryBase<TblSubject>
+    public class SubjectRepository : RepositoryBase<Subject>
     {
         public SubjectRepository(CourseManagementContext context) : base(context)
         {

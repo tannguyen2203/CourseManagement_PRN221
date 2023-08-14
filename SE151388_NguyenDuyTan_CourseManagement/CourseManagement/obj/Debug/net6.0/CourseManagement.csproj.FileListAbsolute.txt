@@ -542,3 +542,5 @@ C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE1513
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\CourseManagement.pdb
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\CourseManagement.genruntimeconfig.cache
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\ref\CourseManagement.dll
+C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\bin\Debug\net6.0\CrouseManagement.Repository.dll
+C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\bin\Debug\net6.0\CrouseManagement.Repository.pdb

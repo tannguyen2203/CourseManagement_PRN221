@@ -3694,6 +3694,22 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "CrouseManagement.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "3.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
+          "Microsoft.Extensions.Configuration": "5.0.0",
+          "Microsoft.Extensions.Configuration.Json": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CrouseManagement.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CrouseManagement.Repository.dll": {}
+        }
+      },
       "Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -10484,6 +10500,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "CrouseManagement.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/CrouseManagement.Repository.csproj",
+      "msbuildProject": "../Repository/CrouseManagement.Repository.csproj"
+    },
     "Repository/1.0.0": {
       "type": "project",
       "path": "../Repository/Repository.csproj",
@@ -10492,6 +10513,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CrouseManagement.Repository >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.17",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.13",
@@ -10525,6 +10547,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\CrouseManagement.Repository.csproj": {
+              "projectPath": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\CrouseManagement.Repository.csproj"
+            },
             "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\Repository.csproj": {
               "projectPath": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\Repository.csproj"
             }

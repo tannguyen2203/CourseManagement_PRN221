@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Repository\CrouseManagement.Repository.csproj" />
     <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 

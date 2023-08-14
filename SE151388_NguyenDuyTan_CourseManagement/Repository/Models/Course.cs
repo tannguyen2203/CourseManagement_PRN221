@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Repository.Models
+namespace CrouseManagement.Repository.Models
 {
-    public partial class TblCourse
+    public partial class Course
     {
-        public TblCourse()
+        public Course()
         {
-            TblSessions = new HashSet<TblSession>();
-            TblStudentInCourses = new HashSet<TblStudentInCourse>();
+            Sessions = new HashSet<Session>();
+            StudentInCourses = new HashSet<StudentInCourse>();
         }
 
         public int Id { get; set; }
@@ -23,9 +23,9 @@ namespace Repository.Models
         public DateTime? DateEnd { get; set; }
         public int Status { get; set; }
 
-        public virtual TblSemester Semester { get; set; }
-        public virtual TblSubject Subject { get; set; }
-        public virtual ICollection<TblSession> TblSessions { get; set; }
-        public virtual ICollection<TblStudentInCourse> TblStudentInCourses { get; set; }
+        public virtual Semester Semester { get; set; }
+        public virtual Subject Subject { get; set; }
+        public virtual ICollection<Session> Sessions { get; set; }
+        public virtual ICollection<StudentInCourse> StudentInCourses { get; set; }
     }
 }

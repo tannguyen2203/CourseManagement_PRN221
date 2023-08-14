@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace Repository.Models
+namespace CrouseManagement.Repository.Models
 {
     public partial class CourseManagementContext : DbContext
     {
@@ -17,13 +17,15 @@ namespace Repository.Models
         {
         }
 
-        public virtual DbSet<TblAttendence> TblAttendences { get; set; }
-        public virtual DbSet<TblCourse> TblCourses { get; set; }
-        public virtual DbSet<TblSemester> TblSemesters { get; set; }
-        public virtual DbSet<TblSession> TblSessions { get; set; }
-        public virtual DbSet<TblStudent> TblStudents { get; set; }
-        public virtual DbSet<TblStudentInCourse> TblStudentInCourses { get; set; }
-        public virtual DbSet<TblSubject> TblSubjects { get; set; }
+        public virtual DbSet<Attendence> Attendences { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Major> Majors { get; set; }
+        public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Semester> Semesters { get; set; }
+        public virtual DbSet<Session> Sessions { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<StudentInCourse> StudentInCourses { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,21 +40,26 @@ namespace Repository.Models
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<TblAttendence>(entity =>
+            modelBuilder.Entity<Attendence>(entity =>
             {
-                entity.ToTable("tblAttendence");
+                entity.ToTable("Attendence");
 
                 entity.Property(e => e.DateAttendence).HasColumnType("datetime");
 
                 entity.HasOne(d => d.Session)
-                    .WithMany(p => p.TblAttendences)
+                    .WithMany(p => p.Attendences)
                     .HasForeignKey(d => d.SessionId)
                     .HasConstraintName("FK_tblAttendence_tblSession");
+
+                entity.HasOne(d => d.Student)
+                    .WithMany(p => p.Attendences)
+                    .HasForeignKey(d => d.StudentId)
+                    .HasConstraintName("FK_Attendence_Student");
             });
 
-            modelBuilder.Entity<TblCourse>(entity =>
+            modelBuilder.Entity<Course>(entity =>
             {
-                entity.ToTable("tblCourse");
+                entity.ToTable("Course");
 
                 entity.Property(e => e.CourseCode).HasMaxLength(50);
 
@@ -63,73 +70,120 @@ namespace Repository.Models
                 entity.Property(e => e.Instructor).HasMaxLength(50);
 
                 entity.HasOne(d => d.Semester)
-                    .WithMany(p => p.TblCourses)
+                    .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.SemesterId)
                     .HasConstraintName("FK_tblCourse_tblSemester");
 
                 entity.HasOne(d => d.Subject)
-                    .WithMany(p => p.TblCourses)
+                    .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.SubjectId)
                     .HasConstraintName("FK_tblCourse_tblSubject");
             });
 
-            modelBuilder.Entity<TblSemester>(entity =>
+            modelBuilder.Entity<Major>(entity =>
             {
-                entity.ToTable("tblSemester");
+                entity.ToTable("Major");
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.MajorCode).HasMaxLength(50);
+
+                entity.Property(e => e.MajorName).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Room>(entity =>
+            {
+                entity.ToTable("Room");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.Detail).HasMaxLength(50);
+
+                entity.Property(e => e.RoomCode).HasMaxLength(50);
+
+                entity.Property(e => e.RoomName).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Semester>(entity =>
+            {
+                entity.ToTable("Semester");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.DateCreate).HasColumnType("datetime");
+
+                entity.Property(e => e.SemesterCode).HasMaxLength(50);
 
                 entity.Property(e => e.SemesterName).HasMaxLength(50);
             });
 
-            modelBuilder.Entity<TblSession>(entity =>
+            modelBuilder.Entity<Session>(entity =>
             {
-                entity.ToTable("tblSession");
+                entity.ToTable("Session");
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.SessionDate).HasMaxLength(50);
 
                 entity.HasOne(d => d.Course)
-                    .WithMany(p => p.TblSessions)
+                    .WithMany(p => p.Sessions)
                     .HasForeignKey(d => d.CourseId)
                     .HasConstraintName("FK_tblSession_tblCourse");
+
+                entity.HasOne(d => d.Room)
+                    .WithMany(p => p.Sessions)
+                    .HasForeignKey(d => d.RoomId)
+                    .HasConstraintName("FK_Session_Room");
             });
 
-            modelBuilder.Entity<TblStudent>(entity =>
+            modelBuilder.Entity<Student>(entity =>
             {
-                entity.ToTable("tblStudent");
+                entity.ToTable("Student");
 
                 entity.Property(e => e.Email).HasMaxLength(100);
 
                 entity.Property(e => e.Name).HasMaxLength(50);
+
+                entity.HasOne(d => d.Major)
+                    .WithMany(p => p.Students)
+                    .HasForeignKey(d => d.MajorId)
+                    .HasConstraintName("FK_Student_Major");
             });
 
-            modelBuilder.Entity<TblStudentInCourse>(entity =>
+            modelBuilder.Entity<StudentInCourse>(entity =>
             {
                 entity.HasKey(e => new { e.StudentId, e.CourseId })
                     .HasName("PK__tblStude__5E57FC83FBC5DAF0");
 
-                entity.ToTable("tblStudentInCourse");
+                entity.ToTable("StudentInCourse");
 
                 entity.HasOne(d => d.Course)
-                    .WithMany(p => p.TblStudentInCourses)
+                    .WithMany(p => p.StudentInCourses)
                     .HasForeignKey(d => d.CourseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tblStudentInCourse_tblCourse");
 
                 entity.HasOne(d => d.Student)
-                    .WithMany(p => p.TblStudentInCourses)
+                    .WithMany(p => p.StudentInCourses)
                     .HasForeignKey(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tblStudentInCourse_tblStudent");
             });
 
-            modelBuilder.Entity<TblSubject>(entity =>
+            modelBuilder.Entity<Subject>(entity =>
             {
-                entity.ToTable("tblSubject");
+                entity.ToTable("Subject");
+
+                entity.Property(e => e.CreateDate).HasColumnType("datetime");
+
+                entity.Property(e => e.SubjectCode).HasMaxLength(50);
 
                 entity.Property(e => e.SubjectName).HasMaxLength(50);
+
+                entity.HasOne(d => d.Major)
+                    .WithMany(p => p.Subjects)
+                    .HasForeignKey(d => d.MajorId)
+                    .HasConstraintName("FK_Subject_Major");
             });
 
             OnModelCreatingPartial(modelBuilder);

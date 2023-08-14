@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\CourseManagement\CourseManagement.csproj" />
+    <ProjectReference Include="..\Repository\CrouseManagement.Repository.csproj" />
   </ItemGroup>
 
 </Project>
