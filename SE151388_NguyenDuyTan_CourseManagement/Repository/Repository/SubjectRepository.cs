@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-    public class TblSubjectRepository : RepositoryBase<TblSubject>
+    public class SubjectRepository : RepositoryBase<TblSubject>
     {
-        public TblSubjectRepository(CourseManagementContext context) : base(context)
+        public SubjectRepository(CourseManagementContext context) : base(context)
         {
         }
     }
