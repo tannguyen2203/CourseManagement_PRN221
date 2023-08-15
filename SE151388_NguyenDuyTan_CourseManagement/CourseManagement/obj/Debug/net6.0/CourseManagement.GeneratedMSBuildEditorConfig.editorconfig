@@ -16,8 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/CoursePage/CourseMainPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlUGFnZVxDb3Vyc2VNYWluUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/CoursePage/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlUGFnZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/CoursePage/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlUGFnZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/CoursePage/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlUGFnZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/CoursePage/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlUGFnZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/Index.cshtml]

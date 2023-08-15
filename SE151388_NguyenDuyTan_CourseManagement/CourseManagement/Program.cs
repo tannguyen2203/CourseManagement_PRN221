@@ -1,7 +1,24 @@
+using CrouseManagement.Repository.Models;
+using CrouseManagement.Repository.Repository;
+using Repository.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<CourseManagementContext>(); 
+builder.Services.AddScoped<CourseRepository>();
+builder.Services.AddScoped<AttendenceRepository>();
+builder.Services.AddScoped<MajorRepository>();
+builder.Services.AddScoped<RoomRepository>();
+builder.Services.AddScoped<SemesterRepository>();
+builder.Services.AddScoped<SessionRepository>();
+builder.Services.AddScoped<StudentInCourseRepository>();
+builder.Services.AddScoped<StudentRepository>();
+builder.Services.AddScoped<SubjectRepository>();
+
+
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -15,6 +32,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseSession();
 
 app.UseRouting();
 
