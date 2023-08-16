@@ -1,7 +1,34 @@
 ﻿@page
 @model CourseManagement.Pages.CoursePage.DetailsModel
 
+<style>
+    .button-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .edit-button,
+    .back-button {
+        text-decoration: none;
+        padding: 5px 10px;
+        background-color: #337ab7;
+        color: white;
+        border-radius: 3px;
+    }
+
+        .edit-button:hover,
+        .back-button:hover {
+            background-color: #23527c;
+        }
+
+    .separator {
+        margin: 0 5px;
+        color: #333;
+    }
+</style>
 <div>
+
     <h4>Course</h4>
     <hr />
     <dl class="row">
@@ -41,21 +68,50 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Course.Status)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Semester)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Semester.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Subject)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Subject.Id)
-        </dd>
+
     </dl>
+
+    <h4>Students</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Major</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var studentInCourse in Model.Course.StudentInCourses)
+            {
+                <tr>
+                    <td>@studentInCourse.Student.Id</td>
+                    <td><img src="@studentInCourse.Student.Image" alt="Student Image" width="100" height="100" /></td>
+                    <td>@studentInCourse.Student.Name</td>
+                    <td>@studentInCourse.Student.Email</td>
+                      <td>
+                        @if (studentInCourse.Student.MajorId == 1)
+                            {
+                            <text>Software Engineering</text>
+                            }
+                        else if (studentInCourse.Student.MajorId == 2)
+                            {
+                            <text>Graphic Design</text>
+                        }
+                        else if (studentInCourse.Student.MajorId == 3)
+                        {
+                            <text>Buisness</text>
+                        }
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Course?.Id">Edit</a> |
-    <a asp-page="./CourseMainPage">Back to List</a>
+<div class="button-group">
+    <a class="edit-button" asp-page="./Edit" asp-route-id="@Model.Course?.Id">Edit</a>
+    <span class="separator">|</span>
+    <a class="back-button" asp-page="./CourseMainPage">Back to List</a>
 </div>

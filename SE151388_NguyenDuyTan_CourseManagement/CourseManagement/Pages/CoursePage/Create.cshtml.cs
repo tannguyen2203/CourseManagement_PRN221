@@ -23,6 +23,11 @@ namespace CourseManagement.Pages.CoursePage
         {
             ViewData["SemesterId"] = new SelectList(_context.Semesters, "Id", "SemesterName");
             ViewData["SubjectId"] = new SelectList(_context.Subjects, "Id", "SubjectName");
+
+            Course = new Course
+            {
+                Status = 1 // Đặt giá trị mặc định là 1
+            };
             return Page();
         }
 

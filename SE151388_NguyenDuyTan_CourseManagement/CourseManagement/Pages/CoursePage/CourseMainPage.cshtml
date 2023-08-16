@@ -53,6 +53,8 @@
             </div>
         </div>
 
+        <div id="noResults" style="display: none; font-size: 20px;">Không tìm thấy kết quả</div>
+
         <table class="table">
             <thead>
                 <tr>
@@ -78,7 +80,16 @@
                         <td>@Html.DisplayFor(modelItem => item.CourseDescription)</td>
                         <td>@Html.DisplayFor(modelItem => item.DateStart)</td>
                         <td>@Html.DisplayFor(modelItem => item.DateEnd)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                        <td>
+                            @if (item.Status == 1)
+                            {
+                                <text>Open</text>
+                            }
+                            else if (item.Status == 0)
+                            {
+                                <text>Closed</text>
+                            }
+                        </td>
                         <td>@Html.DisplayFor(modelItem => item.Semester.SemesterName)</td>
                         <td>@Html.DisplayFor(modelItem => item.Subject.SubjectName)</td>
                         <td>
@@ -104,10 +115,13 @@
 
             var searchButton = document.getElementById("searchButton");
             var searchInput = document.getElementById("searchInput");
+            var noResults = document.getElementById("noResults");
 
             searchButton.addEventListener("click", function () {
                 var searchText = searchInput.value.toLowerCase();
                 var rows = document.querySelectorAll("tbody tr");
+
+                var foundResults = false; // Biến để kiểm tra xem có kết quả tìm kiếm hay không
 
                 rows.forEach(function (row) {
                     var courseCodeCell = row.querySelector("td:first-child");
@@ -115,10 +129,18 @@
 
                     if (courseCode.includes(searchText)) {
                         row.style.display = "table-row";
+                        foundResults = true; // Đánh dấu đã tìm thấy kết quả
                     } else {
                         row.style.display = "none";
                     }
                 });
+
+                // Hiển thị hoặc ẩn dòng văn bản "Không tìm thấy kết quả" dựa trên biến foundResults
+                if (foundResults) {
+                    noResults.style.display = "none";
+                } else {
+                    noResults.style.display = "block";
+                }
             });
 
         });

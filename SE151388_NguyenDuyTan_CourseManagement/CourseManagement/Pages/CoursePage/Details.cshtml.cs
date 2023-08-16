@@ -18,7 +18,7 @@ namespace CourseManagement.Pages.CoursePage
             _context = context;
         }
 
-      public Course Course { get; set; } = default!; 
+        public Course Course { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,12 +27,15 @@ namespace CourseManagement.Pages.CoursePage
                 return NotFound();
             }
 
-            var course = await _context.Courses.FirstOrDefaultAsync(m => m.Id == id);
+            var course = await _context.Courses
+             .Include(c => c.StudentInCourses)
+             .ThenInclude(sic => sic.Student)
+             .FirstOrDefaultAsync(m => m.Id == id);
             if (course == null)
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Course = course;
             }

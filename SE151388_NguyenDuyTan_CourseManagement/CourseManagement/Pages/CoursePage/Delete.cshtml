@@ -42,23 +42,18 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Course.Status)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Semester)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Semester.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Course.Subject)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Course.Subject.Id)
-        </dd>
+       
     </dl>
-    
-    <form method="post">
+
+    <form method="post" onsubmit="return confirmDelete();">
         <input type="hidden" asp-for="Course.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-page="./CourseMainPage">Back to List</a>
     </form>
+
+    <script>
+        function confirmDelete() {
+            return confirm("Bạn có muốn xóa khóa học không");
+        }
+    </script>
 </div>
