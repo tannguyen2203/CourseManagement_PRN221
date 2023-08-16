@@ -6,4 +6,4 @@
 ![Dbdiagram](https://github.com/tannguyen2203/CourseManagement_PRN221/blob/main/docs/dbimage.png)
 
 ### DB script sql 2017 version
-https://github.com/tannguyen2203/CourseManagement_PRN221/blob/main/docs/coursemanagementDB.sql
+https://github.com/tannguyen2203/CourseManagement_PRN221/blob/main/docs/dbscript.sql
