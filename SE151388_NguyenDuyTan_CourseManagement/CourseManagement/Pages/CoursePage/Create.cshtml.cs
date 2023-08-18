@@ -26,7 +26,7 @@ namespace CourseManagement.Pages.CoursePage
 
             Course = new Course
             {
-                Status = 1 // Đặt giá trị mặc định là 1
+                Status = 1 
             };
             return Page();
         }
@@ -40,6 +40,11 @@ namespace CourseManagement.Pages.CoursePage
             if (!ModelState.IsValid || _context.Courses == null || Course == null)
             {
                 return Page();
+            }
+
+            if (Course.Status != 1)
+            {
+                Course.Status = 1;
             }
 
             _context.Courses.Add(Course);

@@ -34,7 +34,6 @@ namespace CourseManagement.Pages.CoursePage
                 Course = await _context.Courses
                 .Include(c => c.Semester)
                 .Include(c => c.Subject).ToListAsync();
-
                 courseList = Course.OrderByDescending(c => c.Id).ToList();
             }
         }

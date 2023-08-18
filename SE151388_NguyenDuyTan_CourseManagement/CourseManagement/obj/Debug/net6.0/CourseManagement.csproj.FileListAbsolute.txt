@@ -463,9 +463,7 @@ C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE1513
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\scopedcss\bundle\CourseManagement.styles.css
-C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\scopedcss\projectbundle\CourseManagement.bundle.scp.css
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\CourseManagement.csproj.CopyComplete
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\CourseManagement.dll
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\refint\CourseManagement.dll
@@ -525,3 +523,5 @@ C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE1513
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\bin\Debug\net6.0\zh-CN\Humanizer.resources.dll
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\bin\Debug\net6.0\zh-Hans\Humanizer.resources.dll
 C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\bin\Debug\net6.0\zh-Hant\Humanizer.resources.dll
+C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\duyta\Desktop\PRN221_CourseManagement_PE\CourseManagement_PRN221\SE151388_NguyenDuyTan_CourseManagement\CourseManagement\obj\Debug\net6.0\scopedcss\projectbundle\CourseManagement.bundle.scp.css
