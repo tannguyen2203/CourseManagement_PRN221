@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d8u5a1MHDO0EN6QQcxx3kC5DddFCgR9yjV+nWBGioUpJ+ue3WecCzt+K0JoKWj+ZZyJC1IFtQhGtlOylV2BXYg==",
+  "dgSpecHash": "urbOA3hBWlgakBW1iCLBZmG567ZyYkrFWnxTUMhrcPXOiwLA6qVqnbBxTeOvXzaKYBmJL7yUeF/0uL6RBTONxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\CrouseManagement.Repository.csproj",
+  "projectFilePath": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\duyta\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\duyta\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

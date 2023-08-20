@@ -20,26 +20,28 @@ namespace CourseManagement.Pages.SubjectPage
 
         public IActionResult OnGet()
         {
-        ViewData["MajorId"] = new SelectList(_context.Majors, "Id", "Id");
+            ViewData["MajorId"] = new SelectList(_context.Majors, "Id", "MajorCode");
             return Page();
         }
 
         [BindProperty]
         public Subject Subject { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Subjects == null || Subject == null)
+            if (!ModelState.IsValid || _context.Subjects == null || Subject == null)
             {
                 return Page();
             }
 
+            Subject.CreateDate = DateTime.Now;
+
             _context.Subjects.Add(Subject);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./SubjectMainPage");
         }
     }
 }

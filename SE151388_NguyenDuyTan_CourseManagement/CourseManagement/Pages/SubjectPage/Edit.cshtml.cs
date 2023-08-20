@@ -66,7 +66,7 @@ namespace CourseManagement.Pages.SubjectPage
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./SubjectMainPage");
         }
 
         private bool SubjectExists(int id)
