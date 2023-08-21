@@ -11,6 +11,7 @@ namespace CrouseManagement.Repository.Models
         {
             Sessions = new HashSet<Session>();
             StudentInCourses = new HashSet<StudentInCourse>();
+            YearCreate = DateTime.Now.Year;
         }
 
         public int Id { get; set; }
@@ -22,7 +23,7 @@ namespace CrouseManagement.Repository.Models
         public DateTime? DateStart { get; set; }
         public DateTime? DateEnd { get; set; }
         public int Status { get; set; }
-
+        public int YearCreate { get; set; }
         public virtual Semester Semester { get; set; }
         public virtual Subject Subject { get; set; }
         public virtual ICollection<Session> Sessions { get; set; }
