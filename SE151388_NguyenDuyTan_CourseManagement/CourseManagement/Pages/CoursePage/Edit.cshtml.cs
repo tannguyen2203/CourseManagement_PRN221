@@ -35,8 +35,8 @@ namespace CourseManagement.Pages.CoursePage
                 return NotFound();
             }
             Course = course;
-           ViewData["SemesterId"] = new SelectList(_context.Semesters, "Id", "Id");
-           ViewData["SubjectId"] = new SelectList(_context.Subjects, "Id", "Id");
+           ViewData["SemesterId"] = new SelectList(_context.Semesters, "Id", "SemesterName");
+           ViewData["SubjectId"] = new SelectList(_context.Subjects, "Id", "SubjectName");
             return Page();
         }
 

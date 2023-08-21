@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using CrouseManagement.Repository.Models;
 
-namespace CourseManagement.Pages.SubjectPage
+namespace CourseManagement.Pages.SemesterPage
 {
     public class DeleteModel : PageModel
     {
@@ -19,44 +19,44 @@ namespace CourseManagement.Pages.SubjectPage
         }
 
         [BindProperty]
-      public Subject Subject { get; set; } = default!;
+      public Semester Semester { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Subjects == null)
+            if (id == null || _context.Semesters == null)
             {
                 return NotFound();
             }
 
-            var subject = await _context.Subjects.FirstOrDefaultAsync(m => m.Id == id);
+            var semester = await _context.Semesters.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (subject == null)
+            if (semester == null)
             {
                 return NotFound();
             }
             else 
             {
-                Subject = subject;
+                Semester = semester;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Subjects == null)
+            if (id == null || _context.Semesters == null)
             {
                 return NotFound();
             }
-            var subject = await _context.Subjects.FindAsync(id);
+            var semester = await _context.Semesters.FindAsync(id);
 
-            if (subject != null)
+            if (semester != null)
             {
-                Subject = subject;
-                _context.Subjects.Remove(Subject);
+                Semester = semester;
+                _context.Semesters.Remove(Semester);
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./SubjectPage");
+            return RedirectToPage("./SemesterPage");
         }
     }
 }

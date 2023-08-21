@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CrouseManagement.Repository.Models;
 
-namespace CourseManagement.Pages.SubjectPage
+namespace CourseManagement.Pages.SemesterPage
 {
     public class EditModel : PageModel
     {
@@ -20,22 +20,21 @@ namespace CourseManagement.Pages.SubjectPage
         }
 
         [BindProperty]
-        public Subject Subject { get; set; } = default!;
+        public Semester Semester { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Subjects == null)
+            if (id == null || _context.Semesters == null)
             {
                 return NotFound();
             }
 
-            var subject =  await _context.Subjects.FirstOrDefaultAsync(m => m.Id == id);
-            if (subject == null)
+            var semester =  await _context.Semesters.FirstOrDefaultAsync(m => m.Id == id);
+            if (semester == null)
             {
                 return NotFound();
             }
-            Subject = subject;
-           ViewData["MajorId"] = new SelectList(_context.Majors, "Id", "MajorCode");
+            Semester = semester;
             return Page();
         }
 
@@ -48,7 +47,7 @@ namespace CourseManagement.Pages.SubjectPage
                 return Page();
             }
 
-            _context.Attach(Subject).State = EntityState.Modified;
+            _context.Attach(Semester).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +55,7 @@ namespace CourseManagement.Pages.SubjectPage
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SubjectExists(Subject.Id))
+                if (!SemesterExists(Semester.Id))
                 {
                     return NotFound();
                 }
@@ -66,12 +65,12 @@ namespace CourseManagement.Pages.SubjectPage
                 }
             }
 
-            return RedirectToPage("./SubjectPage");
+            return RedirectToPage("./SemesterPage");
         }
 
-        private bool SubjectExists(int id)
+        private bool SemesterExists(int id)
         {
-          return (_context.Subjects?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Semesters?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CrouseManagement.Repository.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace CourseManagement.Pages.SubjectPage
+namespace CourseManagement.Pages.SemesterPage
 {
     public class CreateModel : PageModel
     {
@@ -20,28 +21,38 @@ namespace CourseManagement.Pages.SubjectPage
 
         public IActionResult OnGet()
         {
-            ViewData["MajorId"] = new SelectList(_context.Majors, "Id", "MajorCode");
             return Page();
         }
 
         [BindProperty]
-        public Subject Subject { get; set; } = default!;
+        public Semester Semester { get; set; } = default!;
 
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Subjects == null || Subject == null)
+            if (!ModelState.IsValid || _context.Semesters == null || Semester == null)
             {
                 return Page();
             }
+            int randomId = GenerateRandomId();
 
-            Subject.CreateDate = DateTime.Now;
+            while (await _context.Semesters.AnyAsync(s => s.Id == randomId))
+            {
+                randomId = GenerateRandomId();
+            }
 
-            _context.Subjects.Add(Subject);
+            Semester.Id = randomId;
+
+            _context.Semesters.Add(Semester);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./SubjectPage");
+            return RedirectToPage("./SemesterPage");
+        }
+
+        private int GenerateRandomId()
+        {
+            Random random = new Random();
+            return random.Next(5, 20); 
         }
     }
 }

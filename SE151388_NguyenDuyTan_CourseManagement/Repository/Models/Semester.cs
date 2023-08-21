@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -10,8 +12,11 @@ namespace CrouseManagement.Repository.Models
         public Semester()
         {
             Courses = new HashSet<Course>();
+            DateCreate = DateTime.Now;
+            Status = 1;
         }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string SemesterName { get; set; }
         public DateTime? DateCreate { get; set; }
