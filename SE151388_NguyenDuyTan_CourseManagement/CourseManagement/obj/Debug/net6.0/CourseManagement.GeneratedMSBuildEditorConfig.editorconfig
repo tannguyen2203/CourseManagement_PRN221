@@ -64,6 +64,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VtZXN0ZXJQYWdlXFNlbWVzdGVyUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/SessionPage/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvblBhZ2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/SessionPage/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvblBhZ2VcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/SessionPage/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvblBhZ2VcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/SessionPage/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvblBhZ2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/SessionPage/SessionPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vzc2lvblBhZ2VcU2Vzc2lvblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/duyta/Desktop/PRN221_CourseManagement_PE/CourseManagement_PRN221/SE151388_NguyenDuyTan_CourseManagement/CourseManagement/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
