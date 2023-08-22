@@ -81,6 +81,25 @@
                     @Html.Raw("Open")
                 }
             </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Sessions)
+            </dt>
+            <dd class="col-sm-10 text-right">
+                @foreach (var session in Model.Sessions)
+                {
+                    <div>@session.SessionDate</div>
+                }
+            </dd>
+            <dt class="col-sm-2">
+                <h6><b>Room</b></h6>
+            </dt>
+            <dd class="col-sm-10 text-right">
+                @foreach (var session in Model.Sessions)
+                {
+                    <div>@session.Room.RoomCode</div>
+                }
+            </dd>
+
         </dl>
 
         <h4>Students</h4>
@@ -128,26 +147,6 @@
         <a class="back-button" asp-page="./CourseMainPage">Back to List</a>
     </div>
 
-    <script>
-        function updateStatus() {
-            var checkbox = document.getElementById("statusCheckbox");
-            var isChecked = checkbox.checked;
-            var statusValue = isChecked ? "on" : "off";
-
-            $.ajax({
-                url: "/UpdateCourseStatus",
-                type: "POST",
-                data: { status: statusValue },
-                success: function (response) {
-
-                    var statusElement = document.getElementById("status");
-                    statusElement.textContent = statusValue;
-                },
-                error: function (xhr, status, error) {
-                }
-            });
-        }
-    </script>
 </body>
 </html>
 

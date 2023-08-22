@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using CrouseManagement.Repository.Models;
 
-namespace CourseManagement.Pages.CoursePage
+namespace CourseManagement.Pages.RoomPage
 {
     public class DetailsModel : PageModel
     {
@@ -18,33 +18,24 @@ namespace CourseManagement.Pages.CoursePage
             _context = context;
         }
 
-        public Course Course { get; set; } = default!;
-        public List<Session> Sessions { get; set; } = new List<Session>();
+      public Room Room { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Courses == null)
+            if (id == null || _context.Rooms == null)
             {
                 return NotFound();
             }
 
-            var course = await _context.Courses
-                .Include(c => c.Sessions)
-                .ThenInclude(r => r.Room)
-                .Include(c => c.StudentInCourses)
-                .ThenInclude(sic => sic.Student)
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (course == null)
+            var room = await _context.Rooms.FirstOrDefaultAsync(m => m.Id == id);
+            if (room == null)
             {
                 return NotFound();
             }
-            else
+            else 
             {
-                Course = course;
-                Sessions = course.Sessions.ToList();
+                Room = room;
             }
-
             return Page();
         }
     }

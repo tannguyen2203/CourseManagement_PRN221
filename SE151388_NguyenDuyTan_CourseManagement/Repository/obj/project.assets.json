@@ -2635,9 +2635,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\Repository.csproj",
-      "projectName": "Repository",
-      "projectPath": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\CrouseManagement.Repository.csproj",
+      "projectName": "CrouseManagement.Repository",
+      "projectPath": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\CrouseManagement.Repository.csproj",
       "packagesPath": "C:\\Users\\duyta\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\duyta\\Desktop\\PRN221_CourseManagement_PE\\CourseManagement_PRN221\\SE151388_NguyenDuyTan_CourseManagement\\Repository\\obj\\",
       "projectStyle": "PackageReference",

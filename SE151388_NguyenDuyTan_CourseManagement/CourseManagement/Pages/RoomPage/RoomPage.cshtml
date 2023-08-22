@@ -1,5 +1,5 @@
 ﻿@page
-@model CourseManagement.Pages.SubjectPage.IndexModel
+@model CourseManagement.Pages.RoomPage.IndexModel
 
 <!DOCTYPE html>
 <html>
@@ -10,12 +10,6 @@
         body {
             padding: 20px;
             background-color: #FFFFFF;
-        }
-
-        .course-link {
-            cursor: pointer;
-            color: blue;
-            text-decoration: underline;
         }
 
         .header {
@@ -29,10 +23,32 @@
             margin-top: 20px;
         }
 
-        .btn {
-            margin-right: 5px;
-            margin-top: 20px;
-        }
+            .table-container table {
+                width: 100%;
+            }
+
+            .table-container th,
+            .table-container td {
+                padding: 8px;
+                text-align: left;
+            }
+
+            .table-container th {
+                background-color: #f2f2f2;
+            }
+
+            .table-container tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            .table-container a {
+                margin-right: 5px;
+            }
+
+                .table-container a:hover {
+                    text-decoration: underline;
+                }
+
 
         .navbar {
             position: fixed;
@@ -52,22 +68,18 @@
         .nav-item {
             margin-bottom: 10px;
         }
-
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Subject Page</h1>
+        <h1>Room Main Page</h1>
     </div>
-    <div>
-        <p>
-            <a asp-page="Create" class="btn btn-primary">Create New</a>
-        </p>
 
+    <div>
         <nav class="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../Coursepage/CourseMainPage">Home</a>
+                    <a class="nav-link" href="../CoursePage/CourseMainPage">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../SemesterPage/SemesterPage">Semester</a>
@@ -76,45 +88,53 @@
                     <a class="nav-link" href="../SessionPage/SessionPage">Session</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../RoomPage/RoomPage">Room</a>
+                    <a class="nav-link" href="../SubjectPage/SubjectPage">Subject</a>
                 </li>
             </ul>
         </nav>
     </div>
 
-    <div>
+    <div class="container table-container">
+        <p>
+            <a asp-page="Create" class="btn btn-primary">Create New</a>
+        </p>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th>Subject Name</th>
-                    <th>Subject Code</th>
-                    <th>Create Date</th>
-                    <th>Major ID</th>
+                    <th>Room Code</th>
+                    <th>Detail</th>
+                    <th>Status</th>
+                    <th>Room Name</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.Subject)
+                @foreach (var item in Model.roomList)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.SubjectName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.SubjectCode)</td>
-                        <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Major.MajorCode)</td>
+                        <td>@Html.DisplayFor(modelItem => item.RoomCode)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Detail)</td>
+                        <td>
+                            @if (item.Status == 1)
+                            {
+                                <text>Open</text>
+                            }
+                            else if (item.Status == 0)
+                            {
+                                <text>Closed</text>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.RoomName)</td>
                         <td>
                             <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-info">Edit</a>
                             <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
                             <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">Details</a>
-
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-
 </body>
 </html>
-
-

@@ -10,6 +10,7 @@ namespace CrouseManagement.Repository.Models
         public Room()
         {
             Sessions = new HashSet<Session>();
+            Status = 1;
         }
 
         public int Id { get; set; }
