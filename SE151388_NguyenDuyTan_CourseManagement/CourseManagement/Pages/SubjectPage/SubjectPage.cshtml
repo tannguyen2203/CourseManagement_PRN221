@@ -53,16 +53,35 @@
             margin-bottom: 10px;
         }
 
+        #searchInput{
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
+
+
     <div class="header">
         <h1>Subject Page</h1>
     </div>
     <div>
-        <p>
-            <a asp-page="Create" class="btn btn-primary">Create New</a>
-        </p>
+        <div class="container table-container">
+
+            <div class="d-flex justify-content-between">
+                <p>
+                    <a asp-page="Create" class="btn btn-primary">Create New</a>
+                </p>
+                <div class="search-container">
+                    <div class="input-group">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm bằng mã subject">
+                        <div class="input-group-append">
+                            <button id="searchButton" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="noResults" style="display: none; font-size: 20px;">Không tìm thấy kết quả</div>
 
         <nav class="navbar">
             <ul class="navbar-nav">
@@ -113,7 +132,34 @@
             </tbody>
         </table>
     </div>
+    <script>
 
+        searchButton.addEventListener("click", function () {
+            var searchText = searchInput.value.toLowerCase();
+            var rows = document.querySelectorAll("tbody tr");
+
+            var foundResults = false;
+
+            rows.forEach(function (row) {
+                var courseCodeCell = row.querySelector("td:first-child");
+                var courseCode = courseCodeCell.textContent.trim().toLowerCase();
+
+                if (courseCode.includes(searchText)) {
+                    row.style.display = "table-row";
+                    foundResults = true;
+                } else {
+                    row.style.display = "none";
+                }
+            });
+
+
+            if (foundResults) {
+                noResults.style.display = "none";
+            } else {
+                noResults.style.display = "block";
+            }
+        });
+    </script>
 </body>
 </html>
 
